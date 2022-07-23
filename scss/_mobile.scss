@@ -1,0 +1,26 @@
+@media only screen and (max-width: 768px) {
+  .bk{
+    height: 100%;
+  }
+
+  // nintendo
+  #nintendo {
+    .nintendo-wrap {
+      grid-template-columns: 1fr;
+      &-bk {
+        display: none;
+      }
+      &-form {
+        padding: 0px;
+      }
+    }
+  } 
+
+  // Signup styles
+#signup {
+  .signup-form {
+    width: 100%;
+    padding: 20px;
+  } 
+} 
+} 
