@@ -743,16 +743,24 @@ footer .footer{
 
 
 /* LOGIN.html SASS*/ 
+@import 'signup';
+@import 'form';
+@import 'signup';
+
+  /*Variables*/
+  $gradient-l: linear-gradient(to left, #00ffff, #ff00ff);
+  $gradient-r: linear-gradient(to right, #00ffff, #ff00f7 );
+  $gradient-white: linear-gradient(180deg, #e1e3e6 0% ,#adaaaa 100%);
 
 .neon{
-  background: linear-gradient(to left, #00ffff, #ff00ff);
+  background: $gradient-l;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 h3{
-  background: linear-gradient(to left, #00ffff, #ff00ff);
+  background: $gradient-l;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -763,25 +771,18 @@ a:visited{
   text-decoration: none;
 }
 
-.container {
-  margin: auto;
-  max-width: 1300px;
-  overflow: auto;
-  padding: 0 10px;
-}
-
 .btn {
   display: inline-block;
   font-size: 18px;
   color: #fff;
-  background: linear-gradient(to right, #00ffff, #ff00f7 );
+  background: $gradient-r;
   padding: 13px 30px;
   border: none;
   cursor: pointer;
 }
 
 .btn:hover {
-  background: linear-gradient(to right, #c300ff, #ff009d );
+  background: $gradient-r;
 }
 
 .large {
@@ -793,167 +794,101 @@ a:visited{
   color: #424040;
 }
 
+.small1{
+  font-size: 1.3rem;
+}
+
 .txt-primary {
-  background: linear-gradient(to right, #00ffff, #ff00ff);
+  background: $gradient-r;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .txt-primary1{
-  background: linear-gradient(to right, #b039ff, #ff00ff);
+  background: $gradient-r;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.small .txt-gray {
+.txt-gray {
   color: #c4c4c42f;
 }
 
 .p-80 {
   padding: 80px;
+  // padding-top: 150px;
 }
 
 .bk {
-  background: url("../img/Mew-Pokemon.jpg");
+  background: url("../img/portadamariokart-8.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
 }
 
-#nintendo .nintendo-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+#nintendo{
+    .nintendo-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      &-bk {
+        background: url("../img/portadamariokart-8.webp");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        height: 100%;
+      }
+      &-form {
+        padding: 10px;
+        background: #fff;
+        color: #4d4d4d;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      h2, 
+      h3, 
+      p {
+        text-align: center;
+      }
+      h2 {
+        padding-bottom: 20px;
+      }
+      form{
+        p {
+          text-align: right;
+        }
+      }
+      button {
+        width: 100%;
+        border-radius: 5px;
+      } 
+  }
 }
 
-#nintendo .nintendo-wrap-bk {
-  background: url("../img/Mew-Pokemon.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  height: 100%;
-}
+/* SCSS Media Query*/
 
-#nintendo .nintendo-wrap-form {
-  padding: 10px;
-  background: #fff;
-  color: #4d4d4d;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
+$tamanoBoton: 120px;
+$tamanoTipo: 24px;
 
-#nintendo .nintendo-wrap-form h2,
-#nintendo .nintendo-wrap-form h3,
-#nintendo .nintendo-wrap-form p {
-  text-align: center;
-}
-
-#nintendo .nintendo-wrap-form h2 {
-  padding-bottom: 20px;
-}
-
-#nintendo .nintendo-wrap-form form p {
-  text-align: right;
-}
-
-#nintendo .nintendo-wrap-form form button {
-  width: 100%;
-  border-radius: 5px;
-}
-
-/*REGISTRO.html SASS*/
-
-#signup {
-  color: #fff;
-}
-
-#signup h3 {
-  text-align: center;
-  text-transform: uppercase;
-}
-
-#signup .signup-form {
-  background: linear-gradient(180deg, #e1e3e6 0% ,#adaaaa 100%);
-  text-align: center;
-  border-radius: 5px;
-  width: 50%;
-  padding: 30px;
-  display: block;
-  margin: 0 auto;
-}
-
-#signup .signup-form h3 {
-  text-transform: capitalize;
-}
-
-#signup .signup-form form button {
-  width: 100%;
-}
-
-.small1{
-  font-size: 1.3rem;
-}
-
-.bk1{
-  background: url("../img/Mew-Pokemon.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-}
-
-.form-sq-wh, .form-ln-gray {
-  padding: 16px;
-}
-.form-sq-wh label, .form-ln-gray label {
-  display: block;
-  margin-bottom: 5px;
-}
-.form-sq-wh input, .form-ln-gray input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.form-ln-gray input {
-  border: 0;
-  border-bottom: 2px solid #c4c4c4;
-}
-
-.form-sq-wh input {
-  border: 1px solid #fff;
-  background: linear-gradient(to right, #c300ff, #00ccff);
-  color: #fff;
-}
-.form-sq-wh ::placeholder {
-  color: #fff;
-}
-
-@media only screen and (max-width: 768px) {
-  .bk {
-  height: 100%;
-}
-
-  #nintendo .nintendo-wrap {
-  grid-template-columns: 1fr;
-}
-  #nintendo .nintendo-wrap-bk {
-  display: none;
-}
-
-  #nintendo .nintendo-wrap-form {
-  padding: 0px;
-}
-
-  #signup .signup-form {
-  width: 100%;
-  padding: 20px;
-}
+@media (max-width: 550px){
+  .btn {
+    width: ($tamanoBoton - 50)/2;
+    height: $tamanoBoton/2;
+    font-size: $tamanoTipo/2;
+    @if $tamanoBoton/2 < 50px {
+      background-color: #b039ff;
+    }
+    @else if $tamanoBoton/2 > 50 {
+      background-color: #ff00ff;
+    }
+    @else {
+      background-color: #00ffff;
+    }
+  }
 }
 
 
-/* CONTACTO.html BOOSTRAP*/
